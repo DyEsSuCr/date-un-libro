@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "commonjs",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": false,
+    "noUnusedLocals": true,
+    "outDir": "./dist",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "es2016"
+  }
+}
