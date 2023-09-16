@@ -6,7 +6,6 @@ import morgan from 'morgan'
 import config from '@/config/config'
 import { handleErrorMiddleware } from '@/middlewares/error.handler'
 import { routes } from '@/routes/routes'
-import { mongoDBConnect } from './database/mongodb/dbConnect'
 
 export class App {
   private readonly app: express.Application
@@ -37,9 +36,3 @@ export class App {
     this.app.use(morgan('[:date[iso]] (:status) ":method :url HTTP/:http-version" :response-time ms - [:res[content-length]]'))
   }
 }
-
-(async () => {
-  await mongoDBConnect()
-  const app = new App()
-  app.start()
-})()
