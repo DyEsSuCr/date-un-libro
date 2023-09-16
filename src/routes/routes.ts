@@ -14,7 +14,7 @@ readdirSync(pathModules).forEach((folder): void => {
     const cleanName = cleanFileName(fileName)
 
     if (cleanName.endsWith('routes')) {
-      void import(`${pathRoute}/${cleanName}`).then((moduleRouter) => {
+      import(`${pathRoute}/${cleanName}`).then((moduleRouter): void => {
         routes.use(`/api/v1/${cleanName.split('.').shift() as string}`, moduleRouter.router)
       })
     }
