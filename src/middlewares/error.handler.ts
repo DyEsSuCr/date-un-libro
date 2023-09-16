@@ -12,7 +12,7 @@ export class HTTPError extends Error {
   }
 }
 
-export const handleErrorMiddleware = (error: HTTPError, req: Request, res: Response, next: NextFunction): void => {
+export const handleErrorMiddleware = (error: HTTPError, _req: Request, res: Response, _next: NextFunction): void => {
   if (error instanceof HTTPError) {
     const { statusCode, message } = error
     responseHandler(res, statusCode, { statusCode, message })
