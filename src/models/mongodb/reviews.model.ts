@@ -1,6 +1,12 @@
 import { Schema, model } from 'mongoose'
 
-const ReviewSchema = new Schema(
+interface Review {
+  plot: string
+  userId: Schema.Types.ObjectId
+  bookId: string
+}
+
+const ReviewSchema = new Schema<Review>(
   {
     plot: {
       type: String,
