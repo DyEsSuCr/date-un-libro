@@ -14,7 +14,6 @@ export class AuthServices {
     if (userFound) throw new HTTPError(409, 'USER_ALREADY_EXISTS')
 
     const passwordHash = await encryptPass(password)
-
     const registeredUser = await UserModel.create({
       password: passwordHash,
       username

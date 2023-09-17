@@ -6,7 +6,7 @@ export const schemaValidator = (schema: AnyZodObject) => ({ body, params, query 
   const result = schema.safeParse({ body, params, query })
 
   if (!result.success) {
-    if (result.error) return responseHandler(res, 400, result.error.issues.map((issue) => ({ messaje: issue.message })))
+    if (result.error) return responseHandler(res, 400, result.error.issues.map((issue) => ({ error: issue })))
     responseHandler(res, 500, { error: 'INTERNAL_SERVER_ERROR' })
   }
 
