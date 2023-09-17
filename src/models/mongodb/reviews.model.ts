@@ -2,7 +2,7 @@ import { Schema, model } from 'mongoose'
 
 const ReviewSchema = new Schema(
   {
-    review: {
+    plot: {
       type: String,
       required: true
     },
