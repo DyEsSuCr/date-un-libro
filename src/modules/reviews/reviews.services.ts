@@ -1,11 +1,5 @@
+import type { Review } from '@/interfaces/models'
 import { ReviewModel } from '@/models/mongodb/reviews.model'
-import { Schema } from 'mongoose'
-
-interface Review {
-  plot: string
-  userId: Schema.Types.ObjectId
-  bookId: string
-}
 
 export class ModelReview {
   static async find ({ id }: { id?: string }) {

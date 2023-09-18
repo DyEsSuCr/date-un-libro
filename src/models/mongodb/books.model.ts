@@ -1,14 +1,5 @@
 import { Schema, model } from 'mongoose'
-
-interface Book {
-  id: Schema.Types.ObjectId
-  title: string
-  author: string
-  description: string
-  image_url: string
-  genres: string[]
-  num_pages: number
-}
+import type { Book } from '@/interfaces/models'
 
 const BookSchema = new Schema<Book>({
   title: {
