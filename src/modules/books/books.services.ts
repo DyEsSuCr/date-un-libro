@@ -1,3 +1,4 @@
+import { isValidObjectId } from 'mongoose'
 import { Book } from '@/interfaces/models'
 import { HTTPError } from '@/middlewares/error.handler'
 import { BookModel } from '@/models/mongodb/books.model'
@@ -8,12 +9,13 @@ export class ModelBook {
   }
 
   static async find ({ id }: { id?: string }) {
-    if (id) {
-      const book = await BookModel.findOne({ id })
-      if (!book) throw new HTTPError(404, 'BOOK_NOT_FOUND')
-      return book
-    }
+    if (!isValidObjectId(id)) throw new HTTPError(400, 'BOOK_ID_INVALID')
 
-    return await BookModel.find()
+    if (!id) return await BookModel.find()
+
+    const book = await BookModel.findById(id)
+
+    if (!book) throw new HTTPError(404, 'BOOK_NOT_FOUND')
+    return book
   }
 }

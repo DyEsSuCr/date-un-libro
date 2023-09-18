@@ -9,11 +9,13 @@ const ReviewSchema = new Schema<Review>(
     },
     userId: {
       type: Schema.Types.ObjectId,
-      ref: 'User'
+      ref: 'User',
+      required: true
     },
     bookId: {
       type: Schema.Types.ObjectId,
-      ref: 'Book'
+      ref: 'Book',
+      required: true
     }
   },
   {
