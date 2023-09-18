@@ -6,4 +6,5 @@ import { reviewSchema } from '@/schemas/review.schema'
 export const router = Router()
 
 router.post('/', schemaValidator(reviewSchema), RevirewsController.create)
+router.get('/', schemaValidator(reviewSchema), RevirewsController.find)
 router.get('/:id', schemaValidator(reviewSchema), RevirewsController.find)
