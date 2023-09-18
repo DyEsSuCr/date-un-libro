@@ -1,6 +1,12 @@
 import { Schema, model } from 'mongoose'
 
-const UserSchema = new Schema(
+interface User {
+  id: Schema.Types.ObjectId
+  username: string
+  password: string
+}
+
+const UserSchema = new Schema<User>(
   {
     username: {
       type: String,

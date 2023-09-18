@@ -1,6 +1,7 @@
 import { Schema, model } from 'mongoose'
 
 interface Review {
+  id: Schema.Types.ObjectId
   plot: string
   userId: Schema.Types.ObjectId
   bookId: Schema.Types.ObjectId
