@@ -12,4 +12,14 @@ export class BooksController {
       next(err)
     }
   }
+
+  static async find ({ params }: Request, res: Response, next: NextFunction) {
+    try {
+      const books = await ModelBook.find({ id: params.id })
+
+      responseHandler(res, 200, books)
+    } catch (err) {
+      next(err)
+    }
+  }
 }
