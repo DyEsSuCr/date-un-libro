@@ -3,7 +3,7 @@ import { Schema, model } from 'mongoose'
 interface Review {
   plot: string
   userId: Schema.Types.ObjectId
-  bookId: string
+  bookId: Schema.Types.ObjectId
 }
 
 const ReviewSchema = new Schema<Review>(
@@ -17,8 +17,8 @@ const ReviewSchema = new Schema<Review>(
       ref: 'User'
     },
     bookId: {
-      type: String,
-      required: true
+      type: Schema.Types.ObjectId,
+      ref: 'Book'
     }
   },
   {
