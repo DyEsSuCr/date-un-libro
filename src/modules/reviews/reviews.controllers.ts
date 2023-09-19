@@ -2,7 +2,7 @@ import { ModelReview } from './reviews.services'
 import { responseHandler } from '@/libs/reponse.handler'
 import type { NextFunction, Request, Response } from 'express'
 
-export class RevirewsController {
+export class ReviewController {
   static async create ({ body }: Request, res: Response, next: NextFunction) {
     try {
       const registerUser = await ModelReview.create({ ...body })
