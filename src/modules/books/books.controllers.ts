@@ -13,9 +13,19 @@ export class BooksController {
     }
   }
 
-  static async find ({ params }: Request, res: Response, next: NextFunction) {
+  static async findById ({ params }: Request, res: Response, next: NextFunction) {
     try {
-      const books = await ModelBook.find({ id: params.id })
+      const books = await ModelBook.findById({ id: params.id })
+
+      responseHandler(res, 200, books)
+    } catch (err) {
+      next(err)
+    }
+  }
+
+  static async find (req: Request, res: Response, next: NextFunction) {
+    try {
+      const books = await ModelBook.find(req)
 
       responseHandler(res, 200, books)
     } catch (err) {
