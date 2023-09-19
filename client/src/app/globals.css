@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: CanvasText;
+  background-color: Canvas;
+  color-scheme: dark;
+}
