@@ -4,7 +4,7 @@ import { ButtonAuth } from './ButtonAuth'
 
 export function Header () {
   return (
-    <header className='relative w-full flex py-4'>
+    <header className='fixed w-full flex py-4 px-4 top-0 right-0'>
       <nav className='w-full flex items-center gap-12 justify-between'>
 
         <div className='flex items-center gap-12'>
