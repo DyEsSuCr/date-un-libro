@@ -7,16 +7,35 @@ interface Props {
 }
 
 export default async function Book ({ params }: Props) {
-  const book = await getBook()
+  const book = await getBook(params.id)
 
   return (
     <>
-      <section className='grid grid-cols-5 px-4 shadow-2xl'>
-        <h2>hola</h2>
+      <section className='flex gap-4'>
+        <figure className='w-80'>
+          <img src={book.image_url} alt={book.title} />
+        </figure>
+        <aside className='w-full flex flex-col gap-4'>
+          <header className='flex flex-col gap-4'>
+            <h3 className='text-2xl'>{book.title}</h3>
+            <p className='text-slate-600'>
+              Author: <span className='text-white'>{book.author}</span>
+            </p>
+          </header>
+          <p className='text-lg'>
+            {book.description.split(' ').slice(0, 50).join(' ')}
+          </p>
+          <p className='font-medium text-zinc-500'>
+            Generos: <span className='text-white'>{book.genres.map((genre) => genre).join(', ')}</span>
+          </p>
+          <p className='text-slate-600'>
+            Paginas: <span className='text-white'>{book.num_pages}</span>
+          </p>
+        </aside>
       </section>
 
       <section>
-        <h2 className='font-semibold text-8xl'>Reseñas</h2>
+        <h2>Reseñas</h2>
       </section>
     </>
   )
