@@ -8,6 +8,11 @@
   color-scheme: dark;
 }
 
+.body {
+  @apply relative flex justify-center items-center px-4 py-20 overflow-hidden bg-[url("/hero.png")]
+  h-[100dvh] min-w-full bg-cover bg-no-repeat bg-center before:absolute before:inset-0 before:bg-[#00000050]
+}
+
 .figure {
   @apply max-w-[7rem] h-44 rounded-sm overflow-hidden relative mx-auto duration-500 brightness-75
   hover:scale-125 hover:translate-x-0 hover:-translate-y-4 hover:z-10 hover:brightness-100 hover:shadow-lg

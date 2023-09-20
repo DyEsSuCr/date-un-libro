@@ -12,10 +12,10 @@ export const metadata: Metadata = {
 export default function RootLayout ({ children }: { children: React.ReactNode }) {
   return (
     <html lang='es'>
-      <body className='relative flex justify-center items-center px-4 py-20 overflow-hidden bg-[url("/hero.png")] h-[100dvh] min-w-full bg-cover bg-no-repeat bg-center before:absolute before:inset-0 before:bg-[#00000050]'>
+      <body className='body'>
         <AuthContextProvider>
           <Header />
-          <main className='grid grid-cols-1 h-full w-full md:grid-cols-2 justify-center border-x-2 border-t-2 px-4 relative'>
+          <main className='grid grid-cols-1 h-full w-full md:grid-cols-2 justify-center border-x-2 border-t-2 p-16 relative max-w-[1900px]'>
             {children}
           </main>
         </AuthContextProvider>

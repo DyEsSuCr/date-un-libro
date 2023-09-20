@@ -7,13 +7,17 @@ export default async function Home () {
   return (
     <>
       <section>
-        <h2 className='font-semibold text-8xl'>Somos Date un libro Editorial</h2>
-        <p>
+        <h2 className='font-semibold text-8xl'>
+          Somos
+          <div />
+          Date un libro Editorial
+        </h2>
+        <p className='font-medium text-xl pt-4'>
           Exploramos las vastas fronteras del conocimiento literario, erigiendo puentes entre la erudición y la imaginación, para deleitar las mentes más ávidas con el esplendor de nuestras obras literarias.
         </p>
       </section>
 
-      <section className='grid grid-cols-5 px-4 shadow-2xl h-fit'>
+      <section className='grid grid-cols-5 justify-center shadow-2xl h-fit full'>
         {
             books.slice(0, 20).map((book) => (
               // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
