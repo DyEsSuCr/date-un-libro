@@ -8,14 +8,12 @@ export class ModelReview {
     return await ReviewModel.create({ plot, userId, bookId })
   }
 
-  static async find ({ id }: { id?: string }): Promise<Review | Review[]> {
+  static async find ({ id }: { id: string }): Promise<Review | Review[]> {
     if (!isValidObjectId(id)) throw new HTTPError(400, 'REVIEW_ID_INVALID')
 
-    if (!id) return await ReviewModel.find()
+    const review = await ReviewModel.find({ bookId: id }).populate('userId', ['-password', '-createdAt', '-updatedAt'])
 
-    const review = await ReviewModel.find({ bookId: id }).populate('userId').select(['-password'])
-
-    if (review.length === 0) throw new HTTPError(404, 'REVIEW_NOT_FOUND')
+    // if (review.length === 0) throw new HTTPError(404, 'REVIEW_NOT_FOUND')
     return review
   }
 }
