@@ -21,7 +21,7 @@ export default async function Home () {
         {
             books.slice(0, 20).map((book) => (
               // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-              <Link className='max-w-[120px]' key={book._id} href={`/book/${book._id}`}>
+              <Link className='max-w-[120px]' key={book._id} href={`/${book._id}`}>
                 <figure className='figure'>
                   <img className='object-cover' src={book.image_url} />
                 </figure>

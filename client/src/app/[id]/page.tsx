@@ -1,3 +1,5 @@
+// import { Form } from '@/components/Form'
+import { Reviews } from '@/components/Review'
 import { getBook } from '@/services/books'
 
 interface Props {
@@ -35,7 +37,8 @@ export default async function Book ({ params }: Props) {
       </section>
 
       <section>
-        <h2>Reseñas</h2>
+        <Reviews id={params.id} />
+        {/* <Form /> */}
       </section>
     </>
   )
